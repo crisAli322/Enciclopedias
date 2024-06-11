@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>examen</title>
+</head>
+
+<body>
+    
+    <div id="app">
+        <h1>{{titulo}}</h1> 
+        <input type="text" v-model="busqueda" placeholder="Buscar personaje">
+        <br><br>
+        <div v-for="personaje in personajesFiltrados" :key="personaje.nombre">
+            <h2>{{ personaje.nombre }}</h2>
+            <img v-bind:src="personaje.imagen" v-bind:width="personaje.ancho">
+            <br><br>
+            <button v-on:click="cambiarPagina(personaje.nombre)">Ver más</button>
+            <br><br>
+        </div>
+    </div>
+
+    <script src="Vue.js"></script>
+    <script src="aplicacion.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</body>
+</html>
